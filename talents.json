@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Alex Rivera",
+    "role": "Full Stack Developer",
+    "skills": ["Python", "React", "AWS"],
+    "experience": "5 years",
+    "last_outreach_response": "I am looking for a new challenge in fintech, preferably remote."
+  },
+  {
+    "name": "Sam Taylor",
+    "role": "Data Scientist",
+    "skills": ["Python", "TensorFlow", "SQL"],
+    "experience": "3 years",
+    "last_outreach_response": "I just started a new role, not interested right now."
+  },
+  {
+    "name": "Jordan Smith",
+    "role": "Senior Backend Engineer",
+    "skills": ["Python", "Django", "PostgreSQL"],
+    "experience": "8 years",
+    "last_outreach_response": "Open to discussing senior roles with a focus on architecture."
+  }
+]
