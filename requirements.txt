@@ -1,3 +1,5 @@
-crewai[google-genai]
+crewai
+litellm
+langchain-groq
 streamlit
 python-dotenv
