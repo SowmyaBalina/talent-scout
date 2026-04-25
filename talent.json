@@ -22,75 +22,86 @@
   },
   {
     "name": "Virat kohli",
+    "role": "Senior Backend Developer",
     "skills": ["Python", "Django", "PostgreSQL", "AWS", "Docker"],
     "experience": "8 years of backend development. Expert in building scalable APIs and microservices architecture.",
     "last_outreach_response": "I am very interested in hearing about senior leadership roles or staff engineer positions."
   },
   {
     "name": "Smriti mandana",
+    "role": "Frontend Engineer",
     "skills": ["React", "TypeScript", "Tailwind CSS", "Next.js", "GraphQL"],
     "experience": "5 years of frontend engineering. Passionate about building accessible and high-performance user interfaces.",
     "last_content_response": "Thanks for reaching out! I'm currently happy at my current company, but I'm always open to a quick chat for the future."
   },
   {
     "name": "Marcus stonnis",
+    "role": "Data Scientist",
     "skills": ["Python", "Pandas", "Scikit-Learn", "TensorFlow", "SQL"],
     "experience": "4 years as a Data Scientist. Focused on predictive modeling and automating data pipelines in the fintech space.",
     "last_outreach_response": "I'm looking for a new challenge specifically in AI/ML. Please send over the JD!"
   },
   {
     "name": "Chris Gayle",
+    "role": "Cloud Solutions Architect",
     "skills": ["Java", "Spring Boot", "Kubernetes", "Azure", "Kafka"],
     "experience": "10 years in enterprise software. Extensive experience moving legacy monoliths to cloud-native environments.",
     "last_outreach_response": "I just started a new role three months ago, so I am not interested in moving right now."
   },
   {
     "name": "Leo",
+    "role": "DevOps & Platform Engineer",
     "skills": ["Go", "Rust", "Terraform", "Prometheus", "GCP"],
     "experience": "6 years in DevOps and Platform Engineering. Specialist in infrastructure-as-code and observability.",
     "last_outreach_response": "Depends on the salary and remote work policy. If it's 100% remote, let's talk."
   },
   {
     "name": "Sai Teja",
+    "role": "AI/LLM Engineer",
     "skills": ["Python", "Flask", "NoSQL", "OpenAI API", "LangChain"],
     "experience": "3 years of experience. Recently specialized in building LLM-powered applications and AI agents.",
     "last_outreach_response": "This sounds exactly like what I'm looking for! When are you free for a call?"
   },
   {
     "name": "Sruthi Karanam",
+    "role": "Senior Mobile Developer",
     "skills": ["Swift", "Kotlin", "React Native", "Firebase"],
     "experience": "7 years of Mobile Development. Lead dev for two top-rated apps on the App Store.",
     "last_outreach_response": "I am strictly looking for iOS-only roles at the moment. Not interested in hybrid roles."
   },
   {
     "name": "Supreetha Sharma",
+    "role": "Cybersecurity Analyst",
     "skills": ["Cybersecurity", "Penetration Testing", "Ethical Hacking", "Python"],
     "experience": "5 years as a Security Analyst. Certified CISSP with a focus on cloud security auditing.",
     "last_outreach_response": "Is this a contract or full-time role? I only take C2C contracts."
   },
   {
     "name": "Himaja Halvi",
+    "role": "Full Stack Developer",
     "skills": ["Ruby on Rails", "PostgreSQL", "Redis", "JavaScript"],
     "experience": "9 years of Full Stack development. Experience scaling e-commerce platforms to millions of users.",
     "last_outreach_response": "I've moved into Product Management recently, so I'm no longer looking for engineering roles."
   },
   {
     "name": "Hardik Pandya",
+    "role": "Product Designer",
     "skills": ["UI/UX Design", "Figma", "Adobe XD", "HTML/CSS"],
     "experience": "4 years of Product Design. Strong focus on user-centric design and prototyping.",
     "last_outreach_response": "I am currently freelancing and have 20 hours a week available if you need a consultant."
   },
   {
     "name": "James Miller",
+    "role": "Embedded Systems Engineer",
     "skills": ["C++", "Embedded Systems", "Linux Kernel", "RTOS"],
     "experience": "12 years in low-level programming. Worked on automotive sensors and robotics firmware.",
     "last_outreach_response": "I am looking for a very high compensation package to consider leaving my current post."
   },
   {
     "name": "Sita Kumari",
+    "role": "Junior Backend Developer",
     "skills": ["Python", "FastAPI", "SQLAlchemy", "Redshift"],
     "experience": "2 years as a Junior Backend Developer. Fast learner with a strong foundation in data structures.",
     "last_outreach_response": "I'm eager to learn and grow! Please let me know if you consider junior candidates for this."
   }
-
 ]
