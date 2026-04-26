@@ -1,6 +1,8 @@
 AI-Powered Talent Scouting & Recruitment Agent 🕵️‍♂️⚡
 An intelligent recruitment system designed to revolutionize candidate sourcing. It combines fast Python-based matching for quick searches with Groq's LLM for parsing complex job descriptions, enabling recruiters to find perfect talent matches in seconds.
 
+To run locally: pip install -r requirements.txt then streamlit run agent.py
+
 🚀 Project Overview
 Traditional recruitment involves hours of manual profile sifting. This project automates candidate sourcing by:
 

@@ -34,6 +34,39 @@ def get_llm_response(prompt, system_content=None):
     groq_llm = get_groq_llm()
     return groq_llm.call(messages)
 
+def parse_json_safely(response_text):
+    """Safely extract and parse JSON from LLM response with fallbacks."""
+    try:
+        # Remove markdown code blocks if present
+        cleaned = re.sub(r'```json\s*|\```', '', response_text, flags=re.IGNORECASE)
+        cleaned = cleaned.strip()
+        
+        # Try direct JSON parsing first
+        try:
+            return json.loads(cleaned)
+        except json.JSONDecodeError:
+            pass
+        
+        # Try to extract JSON object with regex
+        json_match = re.search(r'\{[^{}]*\}', cleaned, re.DOTALL)
+        if json_match:
+            json_str = json_match.group()
+            # Convert single quotes to double quotes as fallback
+            json_str = json_str.replace("'", '"')
+            return json.loads(json_str)
+        
+        # If still no match, try more aggressive extraction
+        json_match = re.search(r'\{.*\}', cleaned, re.DOTALL)
+        if json_match:
+            json_str = json_match.group()
+            json_str = json_str.replace("'", '"')
+            return json.loads(json_str)
+        
+        return None
+    except Exception as e:
+        st.error(f"JSON parsing error: {e}\nRaw response: {response_text[:100]}")
+        return None
+
 # ============================================================
 # 1. THE PRECISION MATCHER (NO MISTAKES)
 # ============================================================
@@ -92,25 +125,27 @@ if st.session_state.step == "search":
                 # Use a Direct LLM Call - MUCH more reliable than an Agent for parsing
                 prompt = (
                     f"Extract the Job Title and Minimum Years of Experience from this text: '{jd_input}'. "
-                    "Return ONLY a JSON object like this: {'role': 'backend engineer', 'years': 5}. "
-                    "If no years are mentioned, use 0. Return ONLY the JSON."
+                    'Return ONLY a JSON object like this: {"role": "backend engineer", "years": 5}. '
+                    "If no years are mentioned, use 0. Return ONLY the JSON, nothing else."
                 )
                 
                 try:
                     # Direct call to bypass CrewAI "Agent" overhead errors
                     response = get_llm_response(prompt)
                     
-                    # Robust Regex to find JSON
-                    json_match = re.search(r'\{.*\}', response, re.DOTALL)
-                    if json_match:
-                        data = json.loads(json_match.group())
+                    # Use robust JSON parsing
+                    data = parse_json_safely(response)
+                    if data and isinstance(data, dict):
                         r_req = data.get('role', '')
                         y_req = int(data.get('years', 0))
                         
-                        # Execute Match
-                        st.session_state.shortlist = get_exact_matches(r_req, y_req)
-                        st.session_state.step = "chat"
-                        st.rerun()
+                        if r_req:  # Only proceed if we got a role
+                            # Execute Match
+                            st.session_state.shortlist = get_exact_matches(r_req, y_req)
+                            st.session_state.step = "chat"
+                            st.rerun()
+                        else:
+                            st.error("Could not extract job role. Try: 'Backend Engineer 5 years'")
                     else:
                         st.error("Could not determine role/experience. Try: 'Product Designer 5 years'")
                 except Exception as e:
